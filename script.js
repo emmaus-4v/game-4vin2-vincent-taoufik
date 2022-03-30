@@ -57,9 +57,17 @@ var tekenAlles = function () {
   // kogel
 
   // speler
+  var colourPoint = ['blue']
+  function draw () {
+    if (mouseIsPressed) {
+      colourPoint = ['red']
+    };
+  };
+ 
+  background ('#060622');
   noStroke ()
-  fill("white");
-  ellipse(mouseX, mouseY, 15, 15);
+  fill(colourPoint);
+  ellipse(mouseX, mouseY, 30, 30);
   // punten en health
 
 };
@@ -87,7 +95,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('#060622');
 }
 
 /**
