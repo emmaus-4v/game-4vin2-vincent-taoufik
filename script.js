@@ -59,7 +59,7 @@ var tekenAlles = function () {
   // speler
   var colourPoint = ['blue']
   function draw () {
-    if (mouseIsPressed) {
+    if (mouseIsPressed === true) {
       colourPoint = ['red']
     };
   };
@@ -68,6 +68,10 @@ var tekenAlles = function () {
   noStroke ()
   fill(colourPoint);
   ellipse(mouseX, mouseY, 30, 30);
+  fill('#ffffff');
+  ellipse(mouseX, mouseY, 20, 20);
+
+  noCursor()
   // punten en health
 
 };
