@@ -17,6 +17,10 @@ var spelStatus = SPELEN;
 var spelerX = 500; // x-positie van speler
 var spelerY = 500 ; // y-positie van speler
 
+let colourpoint = '#0000FF';
+
+
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -57,16 +61,17 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  var colourPoint = ['blue']
-  function draw () {
-    if (mouseIsPressed === true) {
-      colourPoint = ['red']
+ 
+ 
+    
+    if (keyIsDown()) {
+      colourpoint = '#FF0000';
     };
-  };
+  
  
   background ('#060622');
   noStroke ()
-  fill(colourPoint);
+  fill(colourpoint);
   ellipse(mouseX, mouseY, 30, 30);
   fill('#ffffff');
   ellipse(mouseX, mouseY, 20, 20);
