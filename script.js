@@ -10,6 +10,8 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
+const KEY_Z = 90;
+const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
@@ -63,8 +65,10 @@ var tekenAlles = function () {
   // speler
  
  
-    
-    if (keyIsDown()) {
+    if (keyIsDown(KEY_X)){
+colourpoint =  '#0000FF';
+    };
+    if (keyIsDown(KEY_Z)) {
       colourpoint = '#FF0000';
     };
   
