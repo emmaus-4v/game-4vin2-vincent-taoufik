@@ -21,6 +21,13 @@ var spelerY = 500 ; // y-positie van speler
 
 let colourpoint = '#0000FF';
 
+function pointer() {
+  fill(colourpoint);
+  ellipse(mouseX, mouseY, 30, 30);
+  fill('#ffffff');
+  ellipse(mouseX, mouseY, 20, 20);
+}
+
 
 
 /* ********************************************* */
@@ -75,12 +82,8 @@ colourpoint =  '#0000FF';
  
   background ('#060622');
   noStroke ()
-  fill(colourpoint);
-  ellipse(mouseX, mouseY, 30, 30);
-  fill('#ffffff');
-  ellipse(mouseX, mouseY, 20, 20);
-
   noCursor()
+  pointer();
   // punten en health
 
 };
