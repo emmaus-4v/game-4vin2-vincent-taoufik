@@ -37,7 +37,16 @@ function pointer() {
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
-var beweegAlles = function () {
+var circles = function () {
+
+  for (let x = 0 ; x < 1000 ; x++) {
+    if (x = 100) {
+      if (mousehover) {
+     fill ('white');
+     ellipse (70, 70, 500);
+      }
+  }
+}
   // speler
 
   // vijand
@@ -65,7 +74,8 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
 
-  // vijand
+  // touch the circles
+
 
   // kogel
 
@@ -121,9 +131,10 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
-    beweegAlles();
+    circles();
     verwerkBotsing();
     tekenAlles();
+
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
