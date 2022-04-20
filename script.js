@@ -22,7 +22,7 @@ var spelerY = 500; // y-positie van speler
 let colourpoint = '#0000FF';
 
 var pointer = function () {
-  //fill(colourpoint);
+  fill(colourpoint);
   ellipse(mouseX, mouseY, 30, 30);
   fill('#ffffff');
   ellipse(mouseX, mouseY, 20, 20);
@@ -136,7 +136,7 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  console.log("draw");
+  //console.log("draw");
   if (spelStatus === SPELEN) {
     circles();
     verwerkBotsing();
