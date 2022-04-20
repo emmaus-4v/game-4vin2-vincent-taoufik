@@ -17,11 +17,11 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
 var spelerX = 500; // x-positie van speler
-var spelerY = 500 ; // y-positie van speler
+var spelerY = 500; // y-positie van speler
 
 let colourpoint = '#0000FF';
 
-function pointer() {
+var pointer = function () {
   fill(colourpoint);
   ellipse(mouseX, mouseY, 30, 30);
   fill('#ffffff');
@@ -37,16 +37,17 @@ function pointer() {
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
+
+
 var circles = function () {
 
-  for (let x = 0 ; x < 1000 ; x++) {
+  for (let x = 0; x < 1000; x++) {
     if (x = 100) {
-      if (mousehover) {
-     fill ('white');
-     ellipse (70, 70, 500);
-      }
+      fill('white');
+      ellipse(70, 70, 500);
+
+    }
   }
-}
   // speler
 
   // vijand
@@ -80,23 +81,26 @@ var tekenAlles = function () {
   // kogel
 
   // speler
- 
- 
-    if (keyIsDown(KEY_X)){
-colourpoint =  '#0000FF';
-    };
-    if (keyIsDown(KEY_Z)) {
-      colourpoint = '#FF0000';
-    };
-  
- 
-  background ('#060622');
-  noStroke ()
-  noCursor()
+
+
+  if (keyIsDown(KEY_X)) {
+    colourpoint = '#0000FF';
+  };
+  if (keyIsDown(KEY_Z)) {
+    colourpoint = '#FF0000';
+  };
+
+
+  background('#060622');
+  noStroke();
+  noCursor();
   pointer();
+
+  console.log ('a')
+
   // punten en health
 
-};
+}
 
 /**
  * return true als het gameover is
@@ -143,4 +147,5 @@ function draw() {
     // teken game-over scherm
 
   }
-}
+};
+
