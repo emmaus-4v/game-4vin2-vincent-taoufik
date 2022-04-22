@@ -14,7 +14,7 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
+var spelStatus = GAMEOVER;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -40,14 +40,11 @@ var pointer = function () {
 
 
 var circles = function () {
-  /*
-  for (let x = 0; x < 1000; x++) {
-    if (x = 100) {
-      fill('white');
-      ellipse(70, 70, 500);
 
-    }
-  }*/
+  fill('white');
+  ellipse(70, 70, 50, 50);
+  stroke('#ffffff')
+
 
   // speler
 
@@ -97,7 +94,6 @@ var tekenAlles = function () {
   noCursor();
   pointer();
 
-  console.log ('a')
 
   // punten en health
 
@@ -136,8 +132,8 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  //console.log("draw");
   if (spelStatus === SPELEN) {
+    pointer();
     circles();
     verwerkBotsing();
     tekenAlles();
@@ -147,8 +143,9 @@ function draw() {
     }
   }
   if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
-
+    background('#ff0000')
+    textSize(340)
+    text("sgsg", width, 423)
   }
 };
 
