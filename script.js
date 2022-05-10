@@ -14,7 +14,7 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = GAMEOVER;
+var spelStatus = SPELEN;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -41,9 +41,15 @@ var pointer = function () {
 
 var circles = function () {
 
-  fill('white');
+  var random_number = Math.floor(Math.random() * 2);
+  var x = (random_number);
+  if(x === 1) {circlecolour = red}
+    else {circlecolour = blue}
+
+
+  fill('circlecolour');
   ellipse(70, 70, 50, 50);
-  stroke('#ffffff')
+  stroke('#ffffff');
 
 
   // speler
@@ -134,9 +140,9 @@ function setup() {
 function draw() {
   if (spelStatus === SPELEN) {
     pointer();
-    circles();
     verwerkBotsing();
     tekenAlles();
+    circles();
 
     if (checkGameOver()) {
       spelStatus = GAMEOVER;

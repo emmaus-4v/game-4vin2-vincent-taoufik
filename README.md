@@ -21,11 +21,14 @@ Basis: uitleg, spelen, afgaan en punten
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler // vandaagzxzx
-- [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. zet punten op het scherm 
-- [ ] x. zorg dat je punten kunt scoren
+- [ ] 4. teken 1 vijand (cirkel) waar je later op moet klikken 
+- [ ] 5. geefd punt als ik klik op cirkel
+- [ ] 6. teken cirkel op nieuwe random plek als raak geklikt
+- [ ] 7. maak game over als 1 minuut voorbij 
+- [ ] x. teken 2 cirkels tegelijk
+- [ ] x. teken 3 cirkels tegelijk
+- [ ] x. teken heleboel cirkels tegelijk met array
+
 - [ ] x. zorg dat je af kunt
 - [ ] x. maak game-over-scherm
 - [ ] x. maak uitlegscherm
