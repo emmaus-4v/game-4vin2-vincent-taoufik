@@ -14,7 +14,7 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = GAMEOVER;
+var spelStatus = SPELEN;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -47,8 +47,13 @@ var circles = function () {
     else {circlecolour = blue}
 
 
-  fill('circlecolour');
-  ellipse(70, 70, 50, 50);
+  fill('blue');
+  ellipse(mouseX%400, 70, 50, 50);
+  ellipse(60, 120, 50, 50);
+  ellipse(60, 170, 50, 50);
+  ellipse(70, 250, 50, 50);
+  ellipse(70, 600, 50, 50);
+
   stroke('#ffffff');
 
 
@@ -57,6 +62,13 @@ var circles = function () {
   // vijand
 
   // kogel
+};
+
+var circles2 = function () {
+  for (let i = 0 ; i < 5 ; i++) {
+    circles();
+  };
+
 };
 
 /**
