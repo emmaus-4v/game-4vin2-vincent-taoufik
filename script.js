@@ -14,7 +14,7 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
+var spelStatus = GAMEOVER;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -149,9 +149,9 @@ function draw() {
     }
   }
   if (spelStatus === GAMEOVER) {
-    background('#ff0000')
-    textSize(340)
-    text("sgsg", width, 423)
+    background('#ff0000');
+    textSize(340);
+    text("sgsg", 400, 423);
   }
 };
 
