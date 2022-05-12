@@ -14,8 +14,9 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = GAME;
-var roundStatus = fuck;
+const GAME = 3
+var spelStatus = SPELEN;
+var roundStatus = GAME;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -23,6 +24,7 @@ var spelerY = 500; // y-positie van speler
 let colourpoint = '#0000FF';
 
 var pointer = function () {
+  noStroke();
   fill(colourpoint);
   ellipse(mouseX, mouseY, 30, 30);
   fill('#ffffff');
@@ -146,16 +148,15 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
-    pointer();
     verwerkBotsing();
     console.log("aaa");
     tekenAlles();
-    if (roundStatus = fuck) {
+    if (roundStatus = GAME) {
       circles();
       console.log("faa");
-      var roundStatus = sweggs
 
     }
+    pointer();
 
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
