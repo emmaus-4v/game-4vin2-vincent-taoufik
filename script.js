@@ -14,9 +14,13 @@ const KEY_Z = 90;
 const KEY_X = 88;
 const SPELEN = 1;
 const GAMEOVER = 2;
-const GAME = 3
+const GAME = 3;
+const PLAY = 4;
+const INNIT = 5;
+const NO = 6;
 var spelStatus = SPELEN;
 var roundStatus = GAME;
+var roundStatus2 = INNIT;
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -55,9 +59,12 @@ var circles = function () {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max); }
 
-    ellipse(getRandomInt(700), getRandomInt(700), 60, 60);
+    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
+    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
+    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
 
   stroke('#ffffff');
+
 
 
   // speler
@@ -149,13 +156,17 @@ function setup() {
 function draw() {
   if (spelStatus === SPELEN) {
     verwerkBotsing();
-    console.log("aaa");
     tekenAlles();
-    if (roundStatus = GAME) {
-      circles();
-      console.log("faa");
 
+    if (roundStatus === GAME) {
+      console.log(roundStatus2)
+      if (roundStatus2 === INNIT) {
+        circles();
+        }
+      roundStatus2 = NO;
+      
     }
+
     pointer();
 
     if (checkGameOver()) {
