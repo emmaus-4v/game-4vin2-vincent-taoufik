@@ -48,20 +48,23 @@ var pointer = function () {
 
 var circles = function () {
 
-  var random_number = Math.floor(Math.random() * 2);
-  var x = (random_number);
-  if(x === 1) {circlecolour = red}
-    else {circlecolour = blue}
-
-
-  fill('blue');
-
   function getRandomInt(max) {
     return Math.floor(Math.random() * max); }
 
-    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
-    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
-    ellipse(getRandomInt(1200), getRandomInt(1200), 60, 60);
+  var x = (getRandomInt(1));
+  if(x === 1) {circlecolour = darkred}
+    else {circlecolour = darkblue}
+
+
+  fill(circlecolour);
+
+
+  if(roundStatus2 === INNIT) {
+    c1x = getRandomInt(1200)
+      
+    }
+  roundStatus2 = GAME
+  ellipse(c1x, c1x, 60, 60);
 
   stroke('#ffffff');
 
@@ -157,16 +160,7 @@ function draw() {
   if (spelStatus === SPELEN) {
     verwerkBotsing();
     tekenAlles();
-
-    if (roundStatus === GAME) {
-      console.log(roundStatus2)
-      if (roundStatus2 === INNIT) {
-        circles();
-        }
-      roundStatus2 = NO;
-      
-    }
-
+    circles();
     pointer();
 
     if (checkGameOver()) {
