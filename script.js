@@ -49,26 +49,63 @@ var pointer = function () {
 var circles = function () {
 
   function getRandomInt(max) {
-    return Math.floor(Math.random() * max); }
+    return Math.floor(Math.random() * max);
+  }
 
-  var x = (getRandomInt(1));
-  if(x === 1) {circlecolour = darkred}
-    else {circlecolour = darkblue}
+  if (roundStatus2 === INNIT) {
+    c1x = getRandomInt(1000 + 100)
+    c1y = getRandomInt(400 + 100)
+    c2x = getRandomInt(1000 + 100)
+    c2y = getRandomInt(400 + 100)
+    c3x = getRandomInt(1000 + 100)
+    c3y = getRandomInt(400 + 100)
+    c4x = getRandomInt(1000 + 100)
+    c4y = getRandomInt(400 + 100)
+    c5x = getRandomInt(1000 + 100)
+    c5y = getRandomInt(400 + 100)
 
+    var x = (getRandomInt(2));
+    if (x === 1) { circlecolour = 'darkred' }
+    else { circlecolour = 'darkblue' }
 
-  fill(circlecolour);
+    var x = (getRandomInt(2));
+    if (x === 1) { circlecolour2 = 'darkred' }
+    else { circlecolour2 = 'darkblue' }
 
+    var x = (getRandomInt(2));
+    if (x === 1) { circlecolour3 = 'darkred' }
+    else { circlecolour3 = 'darkblue' }
 
-  if(roundStatus2 === INNIT) {
-    c1x = getRandomInt(1200)
-      
-    }
-  roundStatus2 = GAME
-  ellipse(c1x, c1x, 60, 60);
+    var x = (getRandomInt(2));
+    if (x === 1) { circlecolour4 = 'darkred' }
+    else { circlecolour4 = 'darkblue' }
 
-  stroke('#ffffff');
+    var x = (getRandomInt(2));
+    if (x === 1) { circlecolour5 = 'darkred' }
+    else { circlecolour5 = 'darkblue' }
 
+  }
 
+  if (roundStatus2 = GAME) {
+
+    fill(circlecolour);
+    ellipse(c1x, c1y, 60, 60);
+
+    fill(circlecolour2);
+    ellipse(c2x, c2y, 60, 60);
+
+    fill(circlecolour3);
+    ellipse(c3x, c3y, 60, 60);
+
+    fill(circlecolour4);
+    ellipse(c4x, c4y, 60, 60);
+
+    fill(circlecolour5);
+    ellipse(c5x, c5y, 60, 60);
+
+    stroke('#ffffff');
+
+  }
 
   // speler
 
