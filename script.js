@@ -18,9 +18,14 @@ const GAME = 3;
 const PLAY = 4;
 const INNIT = 5;
 const NO = 6;
+var score = 7
 var spelStatus = SPELEN;
 var roundStatus = GAME;
 var roundStatus2 = INNIT;
+
+var c1x = 11
+var c1y = 12
+var circlecolour1 = 13
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -65,8 +70,8 @@ var circles = function () {
     c5y = getRandomInt(400 + 100)
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour = 'darkred' }
-    else { circlecolour = 'darkblue' }
+    if (x === 1) { circlecolour1 = 'darkred' }
+    else { circlecolour1 = 'darkblue' }
 
     var x = (getRandomInt(2));
     if (x === 1) { circlecolour2 = 'darkred' }
@@ -88,7 +93,7 @@ var circles = function () {
 
   if (roundStatus2 = GAME) {
 
-    fill(circlecolour);
+    fill(circlecolour1);
     ellipse(c1x, c1y, 60, 60);
 
     fill(circlecolour2);
@@ -121,6 +126,18 @@ var circles = function () {
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
+
+  if (mouseX => c1x &&
+    mouseY => (c1y - 35) &&
+    mouseX < (c1x + 35) &&
+    mouseY < (c1y + 35) &&
+    colourpoint === circlecolour1) {
+      c1x = 5000
+      score = score + 1
+      console.log('uf')
+
+
+  };
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
