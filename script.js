@@ -127,17 +127,20 @@ var circles = function () {
  */
 var verwerkBotsing = function () {
 
-  if (mouseX => c1x &&
-    mouseY => (c1y - 35) &&
-    mouseX < (c1x + 35) &&
-    mouseY < (c1y + 35) &&
-    colourpoint === circlecolour1) {
-      c1x = 5000
-      score = score + 1
-      console.log('uf')
-
-
+  if (mouseX > c1x - 35) {
+    if (mouseY > c1y - 35) {
+      if (mouseX < c1x + 35) {
+        if (mouseY < c1y + 35) {
+          if (colourpoint === circlecolour1) {
+            c1x = 5000
+            score = score + 1
+            console.log('uf')
+          }
+        }
+      }
+    }
   };
+
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
