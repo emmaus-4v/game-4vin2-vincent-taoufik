@@ -25,12 +25,21 @@ var roundStatus2 = INNIT;
 
 var c1x = 11
 var c1y = 12
-var circlecolour1 = 13
+var c2x = 13
+var c2y = 14
+var c3x = 15
+var c3y = 16
+var c4x = 17
+var c4y = 18
+var c5x = 19
+var c5y = 20
+
+var circlecolour1 = 21
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
 
-let colourpoint = '#0000FF';
+let colourpoint = 'blue';
 
 var pointer = function () {
   noStroke();
@@ -70,24 +79,24 @@ var circles = function () {
     c5y = getRandomInt(400 + 100)
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour1 = 'darkred' }
-    else { circlecolour1 = 'darkblue' }
+    if (x === 1) { circlecolour1 = 'darkred'; circlecolour1a = 'red' }
+    else { circlecolour1 = 'darkblue'; circlecolour1a = 'blue' }
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour2 = 'darkred' }
-    else { circlecolour2 = 'darkblue' }
+    if (x === 1) { circlecolour2 = 'darkred'; circlecolour2a = 'red' }
+    else { circlecolour2 = 'darkblue'; circlecolour2a = 'blue' }
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour3 = 'darkred' }
-    else { circlecolour3 = 'darkblue' }
+    if (x === 1) { circlecolour3 = 'darkred'; circlecolour3a = 'red' }
+    else { circlecolour3 = 'darkblue'; circlecolour3a = 'blue' }
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour4 = 'darkred' }
-    else { circlecolour4 = 'darkblue' }
+    if (x === 1) { circlecolour4 = 'darkred'; circlecolour4a = 'red' }
+    else { circlecolour4 = 'darkblue'; circlecolour4a = 'blue' }
 
     var x = (getRandomInt(2));
-    if (x === 1) { circlecolour5 = 'darkred' }
-    else { circlecolour5 = 'darkblue' }
+    if (x === 1) { circlecolour5 = 'darkred'; circlecolour5a = 'red' }
+    else { circlecolour5 = 'darkblue'; circlecolour5a = 'blue' }
 
   }
 
@@ -127,20 +136,61 @@ var circles = function () {
  */
 var verwerkBotsing = function () {
 
-  if (mouseX > c1x - 35) {
-    if (mouseY > c1y - 35) {
-      if (mouseX < c1x + 35) {
-        if (mouseY < c1y + 35) {
-          if (colourpoint === circlecolour1) {
-            c1x = 5000
-            score = score + 1
-            console.log('uf')
-          }
-        }
-      }
-    }
-  };
+  var c1xa = (c1x - 15);
+  var c1ya = (c1y - 15);
+  var c1xb = (c1x + 15);
+  var c1yb = (c1y + 15);
+  var c2xa = (c2x - 15);
+  var c2ya = (c2y - 15);
+  var c2xb = (c2x + 15);
+  var c2yb = (c2y + 15);
+  var c3xa = (c3x - 15);
+  var c3ya = (c3y - 15);
+  var c3xb = (c3x + 15);
+  var c3yb = (c3y + 15);
+  var c4xa = (c4x - 15);
+  var c4ya = (c4y - 15);
+  var c4xb = (c4x + 15);
+  var c4yb = (c4y + 15);
+  var c5xa = (c5x - 15);
+  var c5ya = (c5y - 15);
+  var c5xb = (c5x + 15);
+  var c5yb = (c5y + 15);
 
+  if (mouseX > c1xa && mouseY > c1ya && mouseX < c1xb &&
+    mouseY < c1yb && colourpoint == circlecolour1a) {
+   c1x = 5000
+   score = score + 1
+   console.log('uf')
+ }
+
+  if (mouseX > c2xa && mouseY > c2ya && mouseX < c2xb &&
+    mouseY < c2yb && colourpoint == circlecolour2a) {
+   c2x = 5000
+   score = score + 1
+   console.log('uf')
+ }
+
+  if (mouseX > c3xa && mouseY > c3ya && mouseX < c3xb &&
+     mouseY < c3yb && colourpoint == circlecolour3a) {
+    c3x = 5000
+    score = score + 1
+    console.log('uf')
+  }
+
+  if (mouseX > c4xa && mouseY > c4ya && mouseX < c4xb &&
+    mouseY < c4yb && colourpoint == circlecolour4a) {
+   c4x = 5000
+   score = score + 1
+   console.log('uf')
+ }
+
+ if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
+  mouseY < c5yb && colourpoint == circlecolour5a) {
+ c5x = 5000
+ score = score + 1
+ console.log('uf')
+}
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
@@ -164,10 +214,10 @@ var tekenAlles = function () {
 
 
   if (keyIsDown(KEY_X)) {
-    colourpoint = '#0000FF';
+    colourpoint = 'blue';
   };
   if (keyIsDown(KEY_Z)) {
-    colourpoint = '#FF0000';
+    colourpoint = 'red';
   };
 
 
