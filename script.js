@@ -18,6 +18,7 @@ const GAME = 3;
 const PLAY = 4;
 const INNIT = 5;
 const NO = 6;
+var subscore = 0;
 var score = 0
 var spelStatus = SPELEN;
 var roundStatus = GAME;
@@ -72,15 +73,15 @@ var circles = function () {
 
   if (roundStatus2 === INNIT) {
     c1x = getRandomInt(1000 + 100)
-    c1y = getRandomInt(400 + 100)
+    c1y = getRandomInt(600 + 100)
     c2x = getRandomInt(1000 + 100)
-    c2y = getRandomInt(400 + 100)
+    c2y = getRandomInt(600 + 100)
     c3x = getRandomInt(1000 + 100)
-    c3y = getRandomInt(400 + 100)
+    c3y = getRandomInt(600 + 100)
     c4x = getRandomInt(1000 + 100)
-    c4y = getRandomInt(400 + 100)
+    c4y = getRandomInt(600 + 100)
     c5x = getRandomInt(1000 + 100)
-    c5y = getRandomInt(400 + 100)
+    c5y = getRandomInt(600 + 100)
 
     var x = (getRandomInt(2));
     if (x === 1) { circlecolour1 = 'darkred'; circlecolour1a = 'red' }
@@ -101,7 +102,7 @@ var circles = function () {
     var x = (getRandomInt(2));
     if (x === 1) { circlecolour5 = 'darkred'; circlecolour5a = 'red' }
     else { circlecolour5 = 'darkblue'; circlecolour5a = 'blue' }
-
+    
     roundStatus2 = GAME
   }
 
@@ -123,6 +124,8 @@ var circles = function () {
     ellipse(c5x, c5y, 60, 60);
 
     stroke('#ffffff');
+
+    console.log('sio')
 
   }
 
@@ -192,10 +195,10 @@ var verwerkBotsing = function () {
 
   if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
   mouseY < c5yb && colourpoint == circlecolour5a) {
- c5x = 5000
- score = score + 1
- console.log('uf')
-}
+  c5x = 5000
+  score = score + 1
+  console.log('uf')
+  }
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
@@ -203,6 +206,12 @@ var verwerkBotsing = function () {
   // update punten en health
   if (score == 5) {
     roundStatus2 = INNIT
+    score = 0
+    subscore = subscore + 1
+  }
+    
+  if (subscore === 3) {
+    spelStatus = GAMEOVER
   }
 };
 
@@ -284,7 +293,7 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     background('#ff0000');
     textSize(340);
-    text("sgsg", 400, 423);
+    text(subscore, 400, 423);
   }
 };
 
