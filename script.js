@@ -18,7 +18,7 @@ const GAME = 3;
 const PLAY = 4;
 const INNIT = 5;
 const NO = 6;
-var score = 7
+var score = 0
 var spelStatus = SPELEN;
 var roundStatus = GAME;
 var roundStatus2 = INNIT;
@@ -34,7 +34,11 @@ var c4y = 18
 var c5x = 19
 var c5y = 20
 
-var circlecolour1 = 21
+var circlecolour1a = 21
+var circlecolour2a = 22
+var circlecolour3a = 23
+var circlecolour4a = 24
+var circlecolour5a = 25
 
 var spelerX = 500; // x-positie van speler
 var spelerY = 500; // y-positie van speler
@@ -98,6 +102,7 @@ var circles = function () {
     if (x === 1) { circlecolour5 = 'darkred'; circlecolour5a = 'red' }
     else { circlecolour5 = 'darkblue'; circlecolour5a = 'blue' }
 
+    roundStatus2 = GAME
   }
 
   if (roundStatus2 = GAME) {
@@ -185,7 +190,7 @@ var verwerkBotsing = function () {
    console.log('uf')
  }
 
- if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
+  if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
   mouseY < c5yb && colourpoint == circlecolour5a) {
  c5x = 5000
  score = score + 1
@@ -196,7 +201,9 @@ var verwerkBotsing = function () {
   // botsing kogel tegen vijand
 
   // update punten en health
-
+  if (score == 5) {
+    roundStatus2 = INNIT
+  }
 };
 
 /**
