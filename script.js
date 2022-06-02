@@ -12,15 +12,18 @@
 
 const KEY_Z = 90;
 const KEY_X = 88;
+const KEY_SPACE = 32;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const GAME = 3;
 const PLAY = 4;
+const MENU = 69;
 const INNIT = 5;
 const NO = 6;
 var subscore = 0;
-var score = 0
-var spelStatus = SPELEN;
+var score = 1000
+var roundq = 0
+var spelStatus = MENU;
 var roundStatus = GAME;
 var roundStatus2 = INNIT;
 
@@ -168,35 +171,35 @@ var verwerkBotsing = function () {
   if (mouseX > c1xa && mouseY > c1ya && mouseX < c1xb &&
     mouseY < c1yb && colourpoint == circlecolour1a) {
    c1x = 5000
-   score = score + 1
+   roundq = roundq + 1
    console.log('uf')
  }
 
   if (mouseX > c2xa && mouseY > c2ya && mouseX < c2xb &&
     mouseY < c2yb && colourpoint == circlecolour2a) {
    c2x = 5000
-   score = score + 1
+   roundq = roundq + 1
    console.log('uf')
  }
 
   if (mouseX > c3xa && mouseY > c3ya && mouseX < c3xb &&
      mouseY < c3yb && colourpoint == circlecolour3a) {
     c3x = 5000
-    score = score + 1
+    roundq = roundq + 1
     console.log('uf')
   }
 
   if (mouseX > c4xa && mouseY > c4ya && mouseX < c4xb &&
     mouseY < c4yb && colourpoint == circlecolour4a) {
    c4x = 5000
-   score = score + 1
+   roundq = roundq + 1
    console.log('uf')
  }
 
   if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
   mouseY < c5yb && colourpoint == circlecolour5a) {
   c5x = 5000
-  score = score + 1
+  roundq = roundq + 1
   console.log('uf')
   }
   // botsing speler tegen vijand
@@ -204,13 +207,13 @@ var verwerkBotsing = function () {
   // botsing kogel tegen vijand
 
   // update punten en health
-  if (score == 5) {
+  if (roundq === 5) {
     roundStatus2 = INNIT
-    score = 0
+    roundq = 0
     subscore = subscore + 1
   }
     
-  if (subscore === 3) {
+  if (subscore == 0) {
     spelStatus = GAMEOVER
   }
 };
@@ -245,6 +248,9 @@ var tekenAlles = function () {
 
   // punten en health
 
+  if (spelStatus = SPELEN) {
+    score = score - 1
+  }
 }
 
 /**
@@ -253,6 +259,7 @@ var tekenAlles = function () {
  */
 var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
+
   return false;
 };
 
@@ -286,14 +293,21 @@ function draw() {
     circles();
     pointer();
 
-    if (checkGameOver()) {
-      spelStatus = GAMEOVER;
-    }
   }
   if (spelStatus === GAMEOVER) {
     background('#ff0000');
     textSize(340);
-    text(subscore, 400, 423);
+    text(score, 400, 423);
+  }
+
+  if (spelStatus === MENU){
+background ('grey')
+rect(200,300,300,300)
+text('Press "SPACE" To Start', 300, 400)
+if (keyIsDown(KEY_SPACE))
+spelStatus = SPELEN;
+
+
   }
 };
 
