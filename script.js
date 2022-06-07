@@ -21,8 +21,8 @@ const MENU = 69;
 const INNIT = 5;
 const NO = 6;
 var subscore = 0;
-var score = 1000
-var roundq = 0
+var score = 1000;
+var roundq = 0;
 var spelStatus = MENU;
 var roundStatus = GAME;
 var roundStatus2 = INNIT;
@@ -105,7 +105,7 @@ var circles = function () {
     var x = (getRandomInt(2));
     if (x === 1) { circlecolour5 = 'darkred'; circlecolour5a = 'red' }
     else { circlecolour5 = 'darkblue'; circlecolour5a = 'blue' }
-    
+
     roundStatus2 = GAME
   }
 
@@ -147,43 +147,43 @@ var circles = function () {
  */
 var verwerkBotsing = function () {
 
-  var c1xa = (c1x - 15);
-  var c1ya = (c1y - 15);
-  var c1xb = (c1x + 15);
-  var c1yb = (c1y + 15);
-  var c2xa = (c2x - 15);
-  var c2ya = (c2y - 15);
-  var c2xb = (c2x + 15);
-  var c2yb = (c2y + 15);
-  var c3xa = (c3x - 15);
-  var c3ya = (c3y - 15);
-  var c3xb = (c3x + 15);
-  var c3yb = (c3y + 15);
-  var c4xa = (c4x - 15);
-  var c4ya = (c4y - 15);
-  var c4xb = (c4x + 15);
-  var c4yb = (c4y + 15);
-  var c5xa = (c5x - 15);
-  var c5ya = (c5y - 15);
-  var c5xb = (c5x + 15);
-  var c5yb = (c5y + 15);
+  var c1xa = (c1x - 25);
+  var c1ya = (c1y - 25);
+  var c1xb = (c1x + 25);
+  var c1yb = (c1y + 25);
+  var c2xa = (c2x - 25);
+  var c2ya = (c2y - 25);
+  var c2xb = (c2x + 25);
+  var c2yb = (c2y + 25);
+  var c3xa = (c3x - 25);
+  var c3ya = (c3y - 25);
+  var c3xb = (c3x + 25);
+  var c3yb = (c3y + 25);
+  var c4xa = (c4x - 25);
+  var c4ya = (c4y - 25);
+  var c4xb = (c4x + 25);
+  var c4yb = (c4y + 25);
+  var c5xa = (c5x - 25);
+  var c5ya = (c5y - 25);
+  var c5xb = (c5x + 25);
+  var c5yb = (c5y + 25);
 
   if (mouseX > c1xa && mouseY > c1ya && mouseX < c1xb &&
     mouseY < c1yb && colourpoint == circlecolour1a) {
-   c1x = 5000
-   roundq = roundq + 1
-   console.log('uf')
- }
+    c1x = 5000
+    roundq = roundq + 1
+    console.log('uf')
+  }
 
   if (mouseX > c2xa && mouseY > c2ya && mouseX < c2xb &&
     mouseY < c2yb && colourpoint == circlecolour2a) {
-   c2x = 5000
-   roundq = roundq + 1
-   console.log('uf')
- }
+    c2x = 5000
+    roundq = roundq + 1
+    console.log('uf')
+  }
 
   if (mouseX > c3xa && mouseY > c3ya && mouseX < c3xb &&
-     mouseY < c3yb && colourpoint == circlecolour3a) {
+    mouseY < c3yb && colourpoint == circlecolour3a) {
     c3x = 5000
     roundq = roundq + 1
     console.log('uf')
@@ -191,16 +191,16 @@ var verwerkBotsing = function () {
 
   if (mouseX > c4xa && mouseY > c4ya && mouseX < c4xb &&
     mouseY < c4yb && colourpoint == circlecolour4a) {
-   c4x = 5000
-   roundq = roundq + 1
-   console.log('uf')
- }
+    c4x = 5000
+    roundq = roundq + 1
+    console.log('uf')
+  }
 
   if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
-  mouseY < c5yb && colourpoint == circlecolour5a) {
-  c5x = 5000
-  roundq = roundq + 1
-  console.log('uf')
+    mouseY < c5yb && colourpoint == circlecolour5a) {
+    c5x = 5000
+    roundq = roundq + 1
+    console.log('uf')
   }
   // botsing speler tegen vijand
 
@@ -212,10 +212,7 @@ var verwerkBotsing = function () {
     roundq = 0
     subscore = subscore + 1
   }
-    
-  if (subscore == 0) {
-    spelStatus = GAMEOVER
-  }
+
 };
 
 /**
@@ -250,6 +247,10 @@ var tekenAlles = function () {
 
   if (spelStatus = SPELEN) {
     score = score - 1
+  }
+
+  if (score < 0) {
+    spelStatus = GAMEOVER
   }
 }
 
@@ -293,19 +294,27 @@ function draw() {
     circles();
     pointer();
 
+    if (subscore === 6) {
+      spelStatus = GAMEOVER
+    }
+
   }
   if (spelStatus === GAMEOVER) {
     background('#ff0000');
-    textSize(340);
-    text(score, 400, 423);
+    textSize(200);
+
+    if (score > 0) {
+      text(score, 400, 423);
+    }
+    else { text('times up ', 400, 423) }
   }
 
-  if (spelStatus === MENU){
-background ('grey')
-rect(200,300,300,300)
-text('Press "SPACE" To Start', 300, 400)
-if (keyIsDown(KEY_SPACE))
-spelStatus = SPELEN;
+  if (spelStatus === MENU) {
+    background('grey')
+    rect(200, 300, 300, 300)
+    text('Press "SPACE" To Start', 300, 400)
+    if (keyIsDown(KEY_SPACE))
+      spelStatus = SPELEN;
 
 
   }
