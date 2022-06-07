@@ -237,7 +237,7 @@ var tekenAlles = function () {
   };
 
 
-  background('#060622');
+  background('Synthground.jpeg');
   noStroke();
   noCursor();
   pointer();
