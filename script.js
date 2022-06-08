@@ -13,6 +13,7 @@
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
+const ZERO = 48;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const GAME = 3;
@@ -21,7 +22,7 @@ const MENU = 69;
 const INNIT = 5;
 const NO = 6;
 var subscore = 0;
-var score = 1000;
+var score = 1500;
 var roundq = 0;
 var spelStatus = MENU;
 var roundStatus = GAME;
@@ -128,8 +129,6 @@ var circles = function () {
 
     stroke('#ffffff');
 
-    console.log('sio')
-
   }
 
   // speler
@@ -221,23 +220,21 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
 
-  // touch the circles
+  // score
 
-
-  // kogel
-
-  // speler
-
+  textSize(10);
+  text(score, 200, 200);
 
   if (keyIsDown(KEY_X)) {
     colourpoint = 'blue';
+    score = score - 10
   };
   if (keyIsDown(KEY_Z)) {
     colourpoint = 'red';
   };
 
 
-  background('Synthground.jpeg');
+  background('#001020');
   noStroke();
   noCursor();
   pointer();
@@ -304,19 +301,33 @@ function draw() {
     textSize(200);
 
     if (score > 0) {
+      text('score', 400, 223);
       text(score, 400, 423);
+      textSize(20)
+      text('press space to restart')
     }
-    else { text('times up ', 400, 423) }
+    else { text('times up', 400, 423) }
+
+    if (keyIsDown(KEY_SPACE))
+      spelStatus = MENU;
   }
 
   if (spelStatus === MENU) {
-    background('grey')
+    background('green')
     rect(200, 300, 300, 300)
-    text('Press "SPACE" To Start', 300, 400)
-    if (keyIsDown(KEY_SPACE))
+    text('Press "SPACE" To Start', 290, 400)
+
+    rect(800, 300, 300, 300)
+    text('Press "ZERO" For Tutorial', 890, 400)
+
+    if (keyIsDown(KEY_SPACE)) {
       spelStatus = SPELEN;
+      subscore = 0;
+      score = 1500; }
 
-
+    if (keyIsDown(ZERO)) {
+      text('hover mouse over all circles and switch your pointers colour to the circles colour with x and z be careful because spamming makes you lose points', 100, 200)
+    }
   }
 };
 
