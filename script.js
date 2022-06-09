@@ -27,6 +27,7 @@ var roundq = 0;
 var spelStatus = MENU;
 var roundStatus = GAME;
 var roundStatus2 = INNIT;
+var cooldown = 0;
 
 var c1x = 11
 var c1y = 12
@@ -133,6 +134,10 @@ var circles = function () {
 
   // speler
 
+  fill('white')
+  textSize(20);
+  text('time remaining:' + score / 50, 20, 30);
+  text('waves remaining:' + (5 - subscore), 20, 70);
   // vijand
 
   // kogel
@@ -171,35 +176,30 @@ var verwerkBotsing = function () {
     mouseY < c1yb && colourpoint == circlecolour1a) {
     c1x = 5000
     roundq = roundq + 1
-    console.log('uf')
   }
 
   if (mouseX > c2xa && mouseY > c2ya && mouseX < c2xb &&
     mouseY < c2yb && colourpoint == circlecolour2a) {
     c2x = 5000
     roundq = roundq + 1
-    console.log('uf')
   }
 
   if (mouseX > c3xa && mouseY > c3ya && mouseX < c3xb &&
     mouseY < c3yb && colourpoint == circlecolour3a) {
     c3x = 5000
     roundq = roundq + 1
-    console.log('uf')
   }
 
   if (mouseX > c4xa && mouseY > c4ya && mouseX < c4xb &&
     mouseY < c4yb && colourpoint == circlecolour4a) {
     c4x = 5000
     roundq = roundq + 1
-    console.log('uf')
   }
 
   if (mouseX > c5xa && mouseY > c5ya && mouseX < c5xb &&
     mouseY < c5yb && colourpoint == circlecolour5a) {
     c5x = 5000
     roundq = roundq + 1
-    console.log('uf')
   }
   // botsing speler tegen vijand
 
@@ -212,6 +212,7 @@ var verwerkBotsing = function () {
     subscore = subscore + 1
   }
 
+
 };
 
 /**
@@ -219,11 +220,6 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
-  // score
-
-  textSize(10);
-  text(score, 200, 200);
 
   if (keyIsDown(KEY_X)) {
     colourpoint = 'blue';
@@ -234,7 +230,7 @@ var tekenAlles = function () {
   };
 
 
-  background('#001020');
+  background('#001018');
   noStroke();
   noCursor();
   pointer();
@@ -297,33 +293,50 @@ function draw() {
 
   }
   if (spelStatus === GAMEOVER) {
-    background('#ff0000');
     textSize(200);
 
     if (score > 0) {
+      background('#00ff00');
       text('score', 400, 223);
       text(score, 400, 423);
-      textSize(20)
-      text('press space to restart')
+      textSize(20);
     }
-    else { text('times up', 400, 423) }
+    else {
+      background('#ff0000');
+      text('times up', 400, 423)
+    }
+    textSize(12)
+    text('press space to restart', 400, 500)
 
     if (keyIsDown(KEY_SPACE))
-      spelStatus = MENU;
+      spelStatus = MENU
+      cooldown = 100
+
   }
 
   if (spelStatus === MENU) {
-    background('green')
-    rect(200, 300, 300, 300)
-    text('Press "SPACE" To Start', 290, 400)
+    textSize(16)
+    background('pink')
+    fill('white')
+    text('welcome to iris', 100, 100)
+    rect(200, 300, 300, 200)
+    fill('black')
+    text('Press "SPACE" To Start', 260, 400)
 
-    rect(800, 300, 300, 300)
-    text('Press "ZERO" For Tutorial', 890, 400)
+    fill('white')
+    rect(800, 300, 300, 200)
+    fill('black')
+    text('Press "ZERO" For Tutorial', 860, 400)
 
-    if (keyIsDown(KEY_SPACE)) {
+    if (cooldown > 0) {
+      cooldown = cooldown - 1
+    }
+
+    if (keyIsDown(KEY_SPACE) && cooldown === 0) {
       spelStatus = SPELEN;
       subscore = 0;
-      score = 1500; }
+      score = 1500;
+    }
 
     if (keyIsDown(ZERO)) {
       text('hover mouse over all circles and switch your pointers colour to the circles colour with x and z be careful because spamming makes you lose points', 100, 200)
