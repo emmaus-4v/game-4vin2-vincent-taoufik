@@ -151,6 +151,7 @@ var circles = function () {
  */
 var verwerkBotsing = function () {
 
+
   var c1xa = (c1x - 25);
   var c1ya = (c1y - 25);
   var c1xb = (c1x + 25);
@@ -336,6 +337,8 @@ function draw() {
       spelStatus = SPELEN;
       subscore = 0;
       score = 1500;
+      roundq = 0;
+      roundStatus2 = INNIT;
     }
 
     if (keyIsDown(ZERO)) {
