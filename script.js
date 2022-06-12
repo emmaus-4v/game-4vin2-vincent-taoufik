@@ -53,6 +53,8 @@ var spelerY = 500; // y-positie van speler
 
 let colourpoint = 'blue';
 
+
+
 var pointer = function () {
   noStroke();
   fill(colourpoint);
@@ -273,9 +275,9 @@ function setup() {
   console.log("setup");
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
-
+ background('#060622');
  
-  background('#060622');
+
 }
 
 /**
