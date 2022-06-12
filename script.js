@@ -303,7 +303,7 @@ function draw() {
     if (score > 0) {
       background('#00ff00');
       text('score', 400, 223);
-      text(score, 400, 423);
+      text(score, 470, 423);
       textSize(20);
     }
     else {
@@ -311,7 +311,7 @@ function draw() {
       text('Tijd is op!', 240, 423)
     }
     textSize(25)
-    text('Druk op "SPATIE" om opnieuw te spelen', 270, 520)
+    text('Druk op "SPATIE" om opnieuw te spelen', 420, 520)
 
     if (keyIsDown(KEY_SPACE))
       spelStatus = MENU
