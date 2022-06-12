@@ -340,7 +340,7 @@ function draw() {
     rect(810, 430, 385, 130)
     fill('black')
     textSize(20)
-    text('Houd de toets " i " ingedrukt voor uitleg', 828, 500)
+    text('Druk op de toets " i " voor uitleg', 855, 500)
 
 
    
