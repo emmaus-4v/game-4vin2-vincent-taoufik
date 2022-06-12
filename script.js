@@ -355,7 +355,8 @@ function draw() {
     }
 
     if (keyIsDown(ZERO)) {
-      text('Beweeg je muis over de bolletjes met de correspondere kleur. \nJe verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
+      text('Beweeg je muis over de bolletjes met de corresponderende kleur.Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
+      text('Hoe sneller je bent, des te hoger je score zal zijn.')
     }
   }
 };
