@@ -9,7 +9,7 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-var img;
+var Iris;
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
@@ -318,11 +318,14 @@ function draw() {
   if (spelStatus === MENU) {
    
  function preload() {
-  img = loadImage('Iris.png');
-
+  Iris = loadImage("Iris.png");
+ }
+ 
+ function draw(){
+   image(Iris, 0, 0, 40, 40);
  }
   
- image (img);
+ 
 
 
 
