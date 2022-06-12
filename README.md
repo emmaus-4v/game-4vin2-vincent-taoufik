@@ -1,12 +1,12 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: *Iris!*
 Gemaakt door:
 - *Vincent*
 - *Taoufik*
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*Er komen steeds circels van of blauwe of rode kleur, dan moet je met je muis over de circels gaan met de goede kleur van je muis. Je probeert alle golven van af te maken binnen 30 seconden. Hoe sneller je klaar bent met al de golven, des te hoger je score.*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -51,7 +51,7 @@ Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
 - [ ] Animeer speler
 - [ ] Laat badges vallen die extra's aan speler geven
 - [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
-- [ ] Maak andere vijanden bij toenemen tekenVijand
+- [x] Maak andere vijanden bij toenemen tekenVijand
 - [ ] Laat vijanden bewegen in patronen
 - [ ] Maak bediening met touch of bewegen van telefoon mogelijk (zorg dat toetsenbordbediening ook blijft werken)
 - [ ] ...
