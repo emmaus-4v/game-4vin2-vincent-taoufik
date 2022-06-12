@@ -9,7 +9,7 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-let Iris;
+var Iris;
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
@@ -261,7 +261,9 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload(){
+  Iris=loadImage("fotos/Iris.png");
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -272,7 +274,7 @@ function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
+ 
   background('#060622');
 }
 
@@ -287,6 +289,8 @@ function draw() {
     tekenAlles();
     circles();
     pointer();
+
+    
 
     if (subscore === 6) {
       spelStatus = GAMEOVER
@@ -316,7 +320,8 @@ function draw() {
   }
 
   if (spelStatus === MENU) {
-   
+    image(Iris, 400,400, 400,400);
+
     textSize(16)
     background('pink')
     fill('white')
@@ -334,14 +339,8 @@ function draw() {
     textSize(20)
     text('Houd de toets " i " ingedrukt voor uitleg', 828, 500)
 
-    function preload()  {
-      Iris = loadImage('Iris.png')
-    }
 
-    function setup() {
-      image(Iris, 50, 50);
-    }
-
+   
     if (cooldown > 0) {
       cooldown = cooldown - 1
     }
