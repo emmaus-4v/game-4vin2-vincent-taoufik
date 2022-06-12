@@ -13,7 +13,7 @@ let Iris;
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
-const ZERO = 48;
+const KEY_I = 73;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const GAME = 3;
@@ -304,10 +304,10 @@ function draw() {
     }
     else {
       background('#ff0000');
-      text('Tijd is op!', 400, 423)
+      text('Tijd is op!', 240, 423)
     }
-    textSize(12)
-    text('Druk op "SPATIE" om opnieuw te spelen', 400, 500)
+    textSize(25)
+    text('Druk op "SPATIE" om opnieuw te spelen', 270, 520)
 
     if (keyIsDown(KEY_SPACE))
       spelStatus = MENU
@@ -321,18 +321,18 @@ function draw() {
     background('pink')
     fill('white')
     textSize(50)
-    text('Welkom bij IRIS!', 460, 300)
+    text('Welkom bij IRIS!', 460, 150)
 
-    rect(100, 400, 400, 200)
+    rect(110, 430, 385, 130)
     fill('black')
     textSize(20)
     text('Druk op "SPATIE" om het spel te starten', 125, 500)
 
     fill('white')
-    rect(800, 400, 370, 200)
+    rect(810, 430, 385, 130)
     fill('black')
     textSize(20)
-    text('Druk op "NUL" voor uitleg', 860, 500)
+    text('Houd de toets " i " ingedrukt voor uitleg', 828, 500)
 
     function preload()  {
       Iris = loadImage('Iris.png')
@@ -354,9 +354,12 @@ function draw() {
       roundStatus2 = INNIT;
     }
 
-    if (keyIsDown(ZERO)) {
-      text('Beweeg je muis over de bolletjes met de corresponderende kleur.Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
-      text('Hoe sneller je bent, des te hoger je score zal zijn.')
+    if (keyIsDown(KEY_I)) {
+      textSize(20)
+      text('Beweeg je muis over de bolletjes met de corresponderende kleur. Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw.', 35, 300)
+      text('Hoe sneller je bent, des te hoger je score zal zijn.',440, 318)
+      textSize(35)
+      text('VEEL SUCCES!',520, 390)
     }
   }
 };
