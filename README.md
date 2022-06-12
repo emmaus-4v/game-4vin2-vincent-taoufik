@@ -21,17 +21,17 @@ Basis: uitleg, spelen, afgaan en punten
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler // vandaagzxzx
-- [ ] 4. teken 1 vijand (cirkel) waar je later op moet klikken 
-- [ ] 5. geefd punt als ik klik op cirkel
-- [ ] 6. teken cirkel op nieuwe random plek als raak geklikt
-- [ ] 7. maak game over als 1 minuut voorbij 
-- [ ] x. teken 2 cirkels tegelijk
-- [ ] x. teken 3 cirkels tegelijk
+- [x] 4. teken 1 vijand (cirkel) waar je later op moet klikken 
+- [x] 5. geeft punt als ik klik op cirkel
+- [x] 6. teken cirkel op nieuwe random plek als raak geklikt
+- [x] 7. maak game over als 1 minuut voorbij 
+- [x] x. teken 2 cirkels tegelijk
+- [x] x. teken 3 cirkels tegelijk
 - [ ] x. teken heleboel cirkels tegelijk met array
 
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. zorg dat je af kunt
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*

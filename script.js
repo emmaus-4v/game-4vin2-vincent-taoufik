@@ -9,7 +9,7 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-var Iris;
+let Iris;
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
@@ -317,19 +317,6 @@ function draw() {
 
   if (spelStatus === MENU) {
    
- function preload() {
-  Iris = loadImage("Iris.png");
- }
- 
- function draw(){
-   image(Iris, 0, 0, 40, 40);
- }
-  
- 
-
-
-
-
     textSize(16)
     background('pink')
     fill('white')
@@ -345,7 +332,15 @@ function draw() {
     rect(800, 400, 370, 200)
     fill('black')
     textSize(20)
-    text('Druk op "NUL(0)" voor uitleg', 860, 500)
+    text('Druk op "NUL" voor uitleg', 860, 500)
+
+    function preload()  {
+      Iris = loadImage('Iris.png')
+    }
+
+    function setup() {
+      image(Iris, 50, 50);
+    }
 
     if (cooldown > 0) {
       cooldown = cooldown - 1
@@ -360,7 +355,7 @@ function draw() {
     }
 
     if (keyIsDown(ZERO)) {
-      text('Beweeg je muis over de bolletjes met de correspondere kleur. Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
+      text('Beweeg je muis over de bolletjes met de correspondere kleur. \nJe verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
     }
   }
 };
