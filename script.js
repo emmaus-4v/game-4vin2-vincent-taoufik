@@ -9,7 +9,7 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+var img;
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
@@ -136,8 +136,8 @@ var circles = function () {
 
   fill('white')
   textSize(20);
-  text('time remaining:' + score / 50, 20, 30);
-  text('waves remaining:' + (5 - subscore), 20, 70);
+  text('Resterende Tijd: ' + score / 50, 20, 30);
+  text('Resterende Golven: ' + (5 - subscore), 20, 70);
   // vijand
 
   // kogel
@@ -304,10 +304,10 @@ function draw() {
     }
     else {
       background('#ff0000');
-      text('times up', 400, 423)
+      text('Tijd is op!', 400, 423)
     }
     textSize(12)
-    text('press space to restart', 400, 500)
+    text('Druk op "SPATIE" om opnieuw te spelen', 400, 500)
 
     if (keyIsDown(KEY_SPACE))
       spelStatus = MENU
@@ -316,18 +316,33 @@ function draw() {
   }
 
   if (spelStatus === MENU) {
+   
+ function preload() {
+  img = loadImage('Iris.png');
+
+ }
+  
+ image (img);
+
+
+
+
     textSize(16)
     background('pink')
     fill('white')
-    text('welcome to iris', 100, 100)
-    rect(200, 300, 300, 200)
+    textSize(50)
+    text('Welkom bij IRIS!', 460, 300)
+
+    rect(100, 400, 400, 200)
     fill('black')
-    text('Press "SPACE" To Start', 260, 400)
+    textSize(20)
+    text('Druk op "SPATIE" om het spel te starten', 125, 500)
 
     fill('white')
-    rect(800, 300, 300, 200)
+    rect(800, 400, 370, 200)
     fill('black')
-    text('Press "ZERO" For Tutorial', 860, 400)
+    textSize(20)
+    text('Druk op "NUL(0)" voor uitleg', 860, 500)
 
     if (cooldown > 0) {
       cooldown = cooldown - 1
@@ -342,7 +357,7 @@ function draw() {
     }
 
     if (keyIsDown(ZERO)) {
-      text('hover mouse over all circles and switch your pointers colour to the circles colour with x and z be careful because spamming makes you lose points', 100, 200)
+      text('Beweeg je muis over de bolletjes met de correspondere kleur. Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw. VEEL SUCCES!', 100, 200)
     }
   }
 };
