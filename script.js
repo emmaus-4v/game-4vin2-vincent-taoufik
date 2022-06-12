@@ -9,16 +9,18 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-var Iris;
+
 const KEY_Z = 90;
 const KEY_X = 88;
 const KEY_SPACE = 32;
 const KEY_I = 73;
+const KEY_M = 77;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const GAME = 3;
 const PLAY = 4;
 const MENU = 69;
+const TUTORIAL = 10;
 const INNIT = 5;
 const NO = 6;
 var subscore = 0;
@@ -316,6 +318,10 @@ function draw() {
       cooldown = 100
 
   }
+  
+  
+  
+  
 
   if (spelStatus === MENU) {
 
@@ -350,12 +356,40 @@ function draw() {
       roundStatus2 = INNIT;
     }
 
-    if (keyIsDown(KEY_I)) {
-      textSize(20)
-      text('Beweeg je muis over de bolletjes met de corresponderende kleur. Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw.', 35, 300)
-      text('Hoe sneller je bent, des te hoger je score zal zijn.',440, 318)
-      textSize(35)
-      text('VEEL SUCCES!',520, 390)
+    if (keyIsDown(KEY_I) && cooldown === 0) {
+      spelStatus = TUTORIAL;
+     
+    }
+  }
+  
+  if (spelStatus === TUTORIAL){
+
+   
+     background ("purple")
+    
+    fill('white')
+    textSize(50)
+    text('UITLEG',550, 150)
+    
+    textSize(20)
+    text('Beweeg je muis over de bolletjes met de corresponderende kleur. Je verandert de kleur van je muis met "Z" voor Rood en "X" voor Blauw.', 35, 300)
+    text('Hoe sneller je bent, des te hoger je score zal zijn.',440, 318)
+   
+    textSize(35)
+    text('VEEL SUCCES!',520, 390)
+   
+
+    rect(410,450,500,100)
+    fill('black')
+    textSize(20)
+    text('Druk op de " M " toets om terug te gaan naar het menu', 417, 505)
+
+    if (cooldown > 0) {
+      cooldown = cooldown - 1
+    }
+  
+    if (keyIsDown(KEY_M) && cooldown === 0){
+      spelStatus = MENU;
     }
   }
 };
