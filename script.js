@@ -275,10 +275,10 @@ function setup() {
   console.log("setup");
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
- background('#060622');
- 
 
+ background('#060622');
 }
+
 
 /**
  * draw
