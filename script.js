@@ -261,9 +261,7 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-function preload(){
-  Iris=loadImage("fotos/Iris.png");
-}
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -320,7 +318,6 @@ function draw() {
   }
 
   if (spelStatus === MENU) {
-    image(Iris, 400,400, 400,400);
 
     textSize(16)
     background('pink')
